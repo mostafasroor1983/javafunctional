@@ -1,0 +1,1 @@
+This is course from Amigos code to learn functional programming.
