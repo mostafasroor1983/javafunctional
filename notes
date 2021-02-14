@@ -5,3 +5,19 @@ Imperative Programming:
 Declarative Programming (Functional Programming):
 1- using streams and collections.
 2- predicates and consumers.
+
+
+Functional interfaces provide target types for lambda expressions and method references.
+Each functional interface has a single abstract method, called the functional method for
+that functional interface, to which the lambda expression's parameter and return types are matched or adapted.
+Functional interfaces can provide a target type in multiple contexts, such as assignment context,
+method invocation, or cast context:
+
+     // Assignment context
+     Predicate<String> p = String::isEmpty;
+
+     // Method invocation context
+     stream.filter(e -> e.getSize() > 10)...
+
+     // Cast context
+     stream.map((ToIntFunction) e -> e.getSize()).
