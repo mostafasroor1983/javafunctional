@@ -21,3 +21,5 @@ method invocation, or cast context:
 
      // Cast context
      stream.map((ToIntFunction) e -> e.getSize()).
+
+Java Optional is used to handle NullPointerException
