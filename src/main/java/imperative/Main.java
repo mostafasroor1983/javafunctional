@@ -33,11 +33,14 @@ public class Main {
         System.out.println("Declarative Approach");
         Predicate<Person> personPredicate = person -> person.gender.equals(Gender.FEMALE);
 
-        List<Person> females2 = people.stream()
+        /*List<Person> females2 = people.stream()
                 .filter(personPredicate)
                 .collect(Collectors.toList());
+        females2.forEach(System.out::println);*/
 
-        females2.forEach(System.out::println);
+        people.stream()
+                .filter(personPredicate)
+                .forEach(System.out::println);
     }
 
     static class Person {

@@ -20,16 +20,16 @@ public class Stream1 {
     public static void main(String[] args) {
 
         //creating a stream of a fixed number of integers.
-        Stream<Integer> stream = Stream.of(1,2,3,4,5,6,7,8,9);
+        Stream<Integer> stream = Stream.of(1, 2, 3, 4, 5, 6, 7, 8, 9);
         stream.forEach(p -> System.out.println(p));
 
         //creating a stream from the array. The elements in the stream are taken from the array.
-        Stream<Integer> stream2 = Stream.of( new Integer[]{1,2,3,4,5,6,7,8,9} );
+        Stream<Integer> stream2 = Stream.of(new Integer[]{1, 2, 3, 4, 5, 6, 7, 8, 9});
         stream2.forEach(p -> System.out.println(p));
 
         //creating a stream from the List. The elements in the stream are taken from the List.
         List<Integer> list = new ArrayList<Integer>();
-        for(int i = 1; i< 10; i++){
+        for (int i = 1; i < 10; i++) {
             list.add(i);
         }
         Stream<Integer> stream3 = list.stream();
@@ -43,20 +43,20 @@ public class Stream1 {
 
         //collecting all even numbers into a List
         List<Integer> list11 = new ArrayList<Integer>();
-        for(int i = 1; i < 10; i++){
+        for (int i = 1; i < 10; i++) {
             list11.add(i);
         }
         Stream<Integer> stream11 = list11.stream();
-        List<Integer> evenNumbersList = stream11.filter(i -> i%2 == 0).collect(Collectors.toList());
+        List<Integer> evenNumbersList = stream11.filter(i -> i % 2 == 0).collect(Collectors.toList());
         System.out.print(evenNumbersList);
 
         //Collect Stream elements to an Array
         List<Integer> listww = new ArrayList<Integer>();
-        for(int i = 1; i< 10; i++){
+        for (int i = 1; i < 10; i++) {
             listww.add(i);
         }
         Stream<Integer> streamww = list.stream();
-        Integer[] evenNumbersArr = streamww.filter(i -> i%2 == 0).toArray(Integer[]::new);
+        Integer[] evenNumbersArr = streamww.filter(i -> i % 2 == 0).toArray(Integer[]::new);
         System.out.print(evenNumbersArr);
         ////////////////////////////////
 
@@ -135,7 +135,7 @@ public class Stream1 {
         // The result is an Optional holding the reduced value.
         // In the given example, we are reducing all the strings by concatenating them using a separator #.
         Optional<String> reduced = memberNames.stream()
-                .reduce((s1,s2) -> s1 + "#" + s2);
+                .reduce((s1, s2) -> s1 + "#" + s2);
         reduced.ifPresent(System.out::println);
 
 
@@ -162,14 +162,14 @@ public class Stream1 {
         //6. Parallelism in Java Steam
 
         List<Integer> listff = new ArrayList<Integer>();
-        for(int i = 1; i< 10; i++){
+        for (int i = 1; i < 10; i++) {
             listff.add(i);
         }
 
         //Here creating a parallel stream
         Stream<Integer> streamff = listff.parallelStream();
 
-        Integer[] evenNumbersArrff = streamff.filter(i -> i%2 == 0).toArray(Integer[]::new);
+        Integer[] evenNumbersArrff = streamff.filter(i -> i % 2 == 0).toArray(Integer[]::new);
         System.out.print(evenNumbersArrff);
 
 
@@ -178,13 +178,13 @@ public class Stream1 {
         // collect the wrapped objects in a collection.
         // This type of stream is called boxed stream.
         //Get the collection and later convert to stream to process elements
-        List<Integer> ints = IntStream.of(1,2,3,4,5)
+        List<Integer> ints = IntStream.of(1, 2, 3, 4, 5)
                 .boxed()
                 .collect(Collectors.toList());
         System.out.println(ints);
 
         //Stream operations directly
-        Optional<Integer> max = IntStream.of(1,2,3,4,5)
+        Optional<Integer> max = IntStream.of(1, 2, 3, 4, 5)
                 .boxed()
                 .max(Integer::compareTo);
         System.out.println(max.get());

@@ -8,7 +8,7 @@ public class _Consumer {
     public static void main(String[] args) {
         final Customer mostafa_sroor = new Customer("Mostafa Sroor", "70259437");
         //Normal Java Function
-        greetingCutomer(mostafa_sroor);
+        greetingCustomer(mostafa_sroor);
 
         //Consumer Functional Interface
         greetingCustomerConsumer.accept(mostafa_sroor);
@@ -18,7 +18,7 @@ public class _Consumer {
         greetingCustomerConsumerV2.accept(mostafa_sroor, true);
     }
 
-    static void greetingCutomer(Customer customer) {
+    static void greetingCustomer(Customer customer) {
         System.out.println("Hello " + customer.getName() + " thanks for registering phone number " + customer.getPhone());
     }
 
